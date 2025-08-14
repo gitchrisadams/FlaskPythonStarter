@@ -45,4 +45,4 @@ The `'flask db downgrade` would be used to roll back migrations.
 
 ### The app.db file
 
-The `flask db upgrade` command creates the app.db database file.
+The `flask db upgrade base` command creates the app.db database file.
