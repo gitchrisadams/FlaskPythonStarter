@@ -36,3 +36,13 @@ Do not check config.py into version managment, it is also included in the .gitig
 ### Migrating initial table
 
 `flask db migrate -m "users table"`
+
+### Upgrading and downgrading the database
+
+This actually creates the db from the migration files
+`flask db upgrade`
+The `'flask db downgrade` would be used to roll back migrations.
+
+### The app.db file
+
+The `flask db upgrade` command creates the app.db database file.
