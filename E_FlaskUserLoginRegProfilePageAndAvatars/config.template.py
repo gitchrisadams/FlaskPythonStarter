@@ -11,6 +11,9 @@ class Config(object):
 
 class ProductionConfig(Config):
     DATABASE_URI = "mysql://user@localhost/foo"
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        "DATABASE_URL"
+    ) or "sqlite:///" + os.path.join(basedir, "app.db")
 
 
 class DevelopmentConfig(Config):
@@ -24,3 +27,6 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     TESTING = True
     DATABASE_URI = "sqlite:///testing.db"
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        "DATABASE_URL"
+    ) or "sqlite:///" + os.path.join(basedir, "app.db")
